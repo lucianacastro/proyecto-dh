@@ -26,21 +26,52 @@
 		</div> 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9"> 
 			<ul class="nav navbar-nav"> 
-				<li ><a href="login.html">Home</a></li> 
-				<li class="active"><a href="register.html">Registrate</a></li> 
-				<li><a href="faq.html">Preguntas Frecuentes</a></li> 
+				<li ><a href="login.php">Home</a></li> 
+				<li class="active"><a href="register.php">Registrate</a></li> 
+				<li><a href="faq.php">Preguntas Frecuentes</a></li> 
 			</ul> 
 		</div> 
 	</div> 
 </nav>
 
+<?php
+	require_once("funciones.php");
+	$pNombre = "";
+	$pApellido = "";
+	$pMail = "";
+
+	$arrayEquipos = ['Club Atlético Boca Junior','Club Atlético Independiente','Club Atlético River Plate','Racing Club','Club Atlético San Lorenzo de Almagro','Club Atlético Huracán','Club Atlético Banfield','Club Atlético Belgrano',"Club Atlético Newell's Old Boys",'Club Ferro Carril Oeste','Tigre'];
+					
+
+	if ($_POST)
+	{
+		$pNombre = $_POST["inputName"];
+		$pApellido = $_POST["inputApellido"];
+		$miEquipo = $_POST["inputEquipo"];
+		$pMail = $_POST["inputEmail"];
+		//Acá vengo si me enviaron el form
+
+		//Validar
+		$errores = validarUsuario($_POST);
+
+		// Si no hay errores....
+		if (empty($errores))
+		{
+			$usuario = crearUsuario($_POST);
+			// Guardar al usuario en un JSON
+			guardarUsuario($usuario);
+			// Reenviarlo a la felicidad
+			enviarAFelicidad();
+		}
+	}
+?>
 
 <div class="container">
 	<div class="row">
 
 		<div class="col-sm-offset-3 col-sm-6">
 			
-			<form class="form-horizontal">
+			<form class="form-horizontal" method="POST">
 
 				<div class="form-group">
 					<div class="col-sm-offset-4 col-sm-8">
@@ -49,27 +80,27 @@
 				</div>
 
 			  <div class="form-group">
-			    <label for="inputName" class="col-sm-4 control-label">Nombre completo</label>
+			    <label for="inputName" class="col-sm-4 control-label">Nombre </label>
 			    <div class="col-sm-8">
-			      <input type="text" class="form-control" id="inputName" placeholder="Nombre completo">
+			      <input type="text" class="form-control" id="inputName" placeholder="Nombre" name="inputName">
 			    </div>
-			  </div> 
+			  </div>
+			  <div class="form-group">
+			    <label for="inputName" class="col-sm-4 control-label">Apellido </label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" name="inputApellido">
+			    </div>
+			  </div>
+
 
 			  <div class="form-group">
 			  	<label for="inputEquipo" class="col-sm-4 control-label">Soy hincha de</label>
 			  	<div class="col-sm-8">
-				  	<select class="form-control" id="inputEquipo">
+				  	<select class="form-control" id="inputEquipo" name="inputEquipo">
 				  		<option>-- Elegí tu club --</option>
-	 					<option>Club Atlético Boca Juniors</option>
-	  					<option>Club Atlético Independiente</option>
-	  					<option>Club Atlético River Plate</option>
-	 					<option>Racing Club</option>
-	  					<option>Club Atlético San Lorenzo de Almagro</option>
-	  					<option>Club Atlético Huracán</option>
-	  					<option>Club Atlético Banfield</option>
-	  					<option>Club Atlético Belgrano</option>
-	  					<option>Club Atlético Newell's Old Boys</option>
-	  					<option>Club Ferro Carril Oeste</option>
+				  		<?php foreach ($arrayEquipos as $value) {
+				  			echo '<option>'.$value.'</option>';
+				  		} ?>
 					</select>
 				</div>
 			  </div>
@@ -79,7 +110,7 @@
 			    <div class="col-sm-8">
 			    	<div class="input-group">
         				<span class="input-group-addon">@</span>
-			    		<input type="email" class="form-control" id="inputEmail3" placeholder="E-mail">
+			    		<input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="E-mail">
 			    	</div>
 			    </div>
 			</div>
@@ -88,14 +119,14 @@
 			  <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-4 control-label">Nueva contraseña</label>
 			    <div class="col-sm-8">
-			      <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
+			      <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Contraseña">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-4 control-label">Repetir contraseña</label>
 			    <div class="col-sm-8">
-			      <input type="password" class="form-control" id="inputPassword3" placeholder="Repetir contraseña">
+			      <input type="password" class="form-control" id="inputPassword2" name="inputPassword2" placeholder="Repetir contraseña">
 			    </div>
 			  </div>
 
