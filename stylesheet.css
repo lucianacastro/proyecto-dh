@@ -1,7 +1,19 @@
-body {
-	background-image: url(images/futbol4.png);
-
+nav {
+	z-index: 1;
 }
+.background {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-size: cover;
+	z-index: 0;
+}
+.background-home {
+	background-image: url(images/img_Home.jpg);
+} 
+
 
 dt {
 	margin-top: 10px;
