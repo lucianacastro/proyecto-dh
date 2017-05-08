@@ -1,12 +1,15 @@
 <div class="background background-home"></div>
 <div class="container">
 	<div class="row">
-		<div class="col-sm-offset-3 col-sm-6">
+		<div class="col-sm-offset-5 col-sm-6">
 			<form class="form-horizontal" method="post">
 
 			  	<div class="form-group">
 					<div class="col-sm-offset-4 col-sm-8">
-						<h1>Ingresá al sitio!</h1>
+						<div class="logo">
+							<img src="images/logo_TeamUp-sm.png">
+						</div>
+						
 						
 						<? if (isset($errors)): ?>
 							<? foreach($errors as $fieldName => $message): ?>
@@ -48,7 +51,7 @@
 			  </div>
 			  <div class="form-group">
 			    <div class="col-sm-offset-4 col-sm-8">
-			      <button type="submit" class="btn btn-default">Iniciar sesión</button>
+			      <button type="submit" class="btn btn-success">Iniciar sesión</button>
 			    </div>
 			  </div>
 

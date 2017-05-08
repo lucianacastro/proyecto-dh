@@ -19,6 +19,10 @@ dt {
 	margin-top: 10px;
 }
 
+.logo {
+	margin-left: -100px;
+}
+
 .links {
 	color: white;
 }
