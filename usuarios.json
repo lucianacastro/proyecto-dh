@@ -1,4 +1,9 @@
-{"nombre":"Dario","apellido":"Sus","mail":"dario@dh.com","password":"$2y$10$hRyaAlNVdAB.kKCrYY0cj.8phfR\/e0gC\/R.6wWhMjYJDVmas60YdG","sexo":"0","id":1}
-{"nombre":"Dario","apellido":"Sus","mail":"dario2@dh.com","password":"$2y$10$IDmG0.XzGfjwrFD\/dXqyB.ygmjj9bzh2diRz5.oe3NebSORvYmKMG","sexo":"0","id":2}
-
-{"nombre":"Tamara","apellido":"Nerini","mail":"tamitanerini@hotmail.com","password":"$2y$10$kWiTxgskSB64IjoO2K6yrupshZfGZzjeXR.bcLSjnw6MacIENz9Vy","inputEquipo":"Tigre","id":1}
+{"nombre":"Dario","apellido":"Sus","email":"dario@dh.com","password":"$2y$10$hRyaAlNVdAB.kKCrYY0cj.8phfR\/e0gC\/R.6wWhMjYJDVmas60YdG","sexo":"0","id":1}
+{"nombre":"Dario","apellido":"Sus","email":"dario2@dh.com","password":"$2y$10$IDmG0.XzGfjwrFD\/dXqyB.ygmjj9bzh2diRz5.oe3NebSORvYmKMG","sexo":"0","id":2}
+{"nombre":"Tamara","apellido":"Nerini","email":"tamitanerini@hotmail.com","password":"$2y$10$kWiTxgskSB64IjoO2K6yrupshZfGZzjeXR.bcLSjnw6MacIENz9Vy","inputEquipo":"Tigre","id":1}
+{"nombre":"Cosme","apellido":"Fulanito","email":"lucianaycastro@gmail.com","password":"$2y$10$IdCKO08JDlpRxFIEtbffJOJJc1GA3jRJ5Glt6zDFb8wvETwLDi6Qe","inputEquipo":"Club Atl\u00e9tico Independiente","id":2}
+{"nombre":"luciana","apellido":"castro","email":"luciana@gmail.com","password":"$2y$10$N\/7M13Prib7iCvZkZPYpgOKbPMtpmhM6VkCj4U3m8vF000pXJLXKW","inputEquipo":"Club Atl\u00e9tico Independiente","id":3}
+{"nombre":"hola","apellido":"quetal","email":"lucia@gmail.com","password":"$2y$10$uiQJVUtM1ripOKMN6dw.jeSeqquLXBeEb3XE9GN.EPSPej\/XNEud.","inputEquipo":"Club Atl\u00e9tico Independiente","id":4}
+{"nombre":"ger","apellido":"bort","email":"lua@gmail.com","password":"$2y$10$QhY.QAZ.f9jPij4oG6u1.ebHgKHxXlbG\/S3NI0ixgo\/MiumdQ9mea","inputEquipo":"Club Atl\u00e9tico Independiente","id":5}{"nombre":"luciana","apellido":"castro","email":"lu@gmail.com","password":"$2y$10$SaALDHmRqUYwwO6Ju1.2YOsNZ24IptuiGEbZC59\/D.yoj1lR6F2CS","inputEquipo":"Club Atl\u00e9tico Independiente","id":1}
+{"nombre":"luciana","apellido":"castro","email":"lu@gmail.com","password":"$2y$10$hywZFuaLiHYWWgAKcEBSS.ZKEIy6Lg8trGHFzRKak0rzrEmJtEyQe","inputEquipo":"Club Atl\u00e9tico Independiente","id":1}
+{"nombre":"gera","apellido":"bor","email":"gera@gmail.com","password":"$2y$10$30kYat8gTSO8ihTqRw5ZDOlgDYDC2FJTnlZX5dF6tkBJJNLE\/udi6","inputEquipo":"Club Atl\u00e9tico Boca Junior","id":1}

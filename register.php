@@ -1,41 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Registrate</title>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
-
-
-
-<body>
-
-<!-- Navbar (header) luego haremos un include del mismo con php-->
-<nav class="navbar navbar-inverse"> 
-	<div class="container-fluid"> 
-		<div class="navbar-header"> 
-			<button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false"> 
-				<span class="sr-only">Toggle navigation</span> 
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span> 
-			</button> 
-			<a href="#" class="navbar-brand">Team up!</a> 
-		</div> 
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9"> 
-			<ul class="nav navbar-nav"> 
-				<li ><a href="login.php">Home</a></li> 
-				<li class="active"><a href="register.php">Registrate</a></li> 
-				<li><a href="faq.php">Preguntas Frecuentes</a></li> 
-			</ul> 
-		</div> 
-	</div> 
-</nav>
-
 <?php
-	require_once("funciones.php");
+	include_once "init.php";
+
+	//esto es para que si está logeado no pueda acceder al form de register
+	if(is_logged_in()) {
+	header("Location: success.php");
+	exit();
+}
 	$pNombre = "";
 	$pApellido = "";
 	$pMail = "";
@@ -66,6 +36,7 @@
 	}
 ?>
 
+<? include "header.phtml" ?>
 <div class="container">
 	<div class="row">
 
@@ -76,19 +47,30 @@
 				<div class="form-group">
 					<div class="col-sm-offset-4 col-sm-8">
 						<h1>Registrate!</h1>
+						
+						<? if (isset($errores)): ?>
+							<div class="alert alert-danger" role="alert">
+								<ul>
+									<? foreach($errores as $fieldName => $message): ?>
+										<li><?= $message ?></li>
+									<? endforeach ?>
+								</ul>
+							</div>
+						<? endif ?>
+
 					</div>	
 				</div>
 
-			  <div class="form-group">
-			    <label for="inputName" class="col-sm-4 control-label">Nombre </label>
+			  <div class="form-group <?= isset($errores) ? get_error_css_class(@$errores['name']) : '' ?>">
+			    <label for="inputName" class="col-sm-4 control-label">Nombre</label>
 			    <div class="col-sm-8">
-			      <input type="text" class="form-control" id="inputName" placeholder="Nombre" name="inputName">
+			      <input type="text" class="form-control" id="inputName" placeholder="Nombre" value="<?= @$_POST['name'] ?>" name="inputName">
 			    </div>
 			  </div>
-			  <div class="form-group">
-			    <label for="inputName" class="col-sm-4 control-label">Apellido </label>
+			  <div class="form-group <?= isset($errores) ? get_error_css_class(@$errores['surname']) : '' ?>">
+			    <label for="inputName" class="col-sm-4 control-label">Apellido</label>
 			    <div class="col-sm-8">
-			      <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" name="inputApellido">
+			      <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" value="<?= @$_POST['surname'] ?>" name="inputApellido">
 			    </div>
 			  </div>
 
@@ -98,35 +80,37 @@
 			  	<div class="col-sm-8">
 				  	<select class="form-control" id="inputEquipo" name="inputEquipo">
 				  		<option>-- Elegí tu club --</option>
-				  		<?php foreach ($arrayEquipos as $value) {
-				  			echo '<option>'.$value.'</option>';
-				  		} ?>
+				  		<? foreach ($arrayEquipos as $value): ?>
+				  			<option <?= $value == @$_POST['inputEquipo'] ? 'selected' : ''?> >
+				  				<?= $value ?></option>
+				  		<? endforeach ?>
+					
 					</select>
 				</div>
 			  </div>
 
-			  <div class="form-group">
+			  <div class="form-group <?= isset($errores) ? get_error_css_class(@$errores['email']) : '' ?>">
 			    <label for="inputEmail3" class="col-sm-4 control-label">E-mail</label>
 			    <div class="col-sm-8">
 			    	<div class="input-group">
         				<span class="input-group-addon">@</span>
-			    		<input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="E-mail">
+			    		<input type="email" class="form-control" id="inputEmail" name="inputEmail" value="<?= @$_POST['inputEmail'] ?>" placeholder="E-mail">
 			    	</div>
 			    </div>
 			</div>
 
 
-			  <div class="form-group">
+			  <div class="form-group <?= isset($errores) ? get_error_css_class(@$errores['password']) : '' ?>">
 			    <label for="inputPassword3" class="col-sm-4 control-label">Nueva contraseña</label>
 			    <div class="col-sm-8">
-			      <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Contraseña">
+			      <input type="password" class="form-control" id="inputPassword" value= "<?= @$_POST['inputPassword'] ?>" name="inputPassword" placeholder="Contraseña">
 			    </div>
 			  </div>
 
-			  <div class="form-group">
+			  <div class="form-group <?= isset($errores) ? get_error_css_class(@$errores['repeat-password']) : '' ?>">
 			    <label for="inputPassword3" class="col-sm-4 control-label">Repetir contraseña</label>
 			    <div class="col-sm-8">
-			      <input type="password" class="form-control" id="inputPassword2" name="inputPassword2" placeholder="Repetir contraseña">
+			      <input type="password" class="form-control" id="inputPassword2" value="<?= @$_POST['inputPassword2'] ?>" name="inputPassword2" placeholder="Repetir contraseña">
 			    </div>
 			  </div>
 
@@ -142,9 +126,4 @@
 	</div>
 </div>
 
-
-<script type="text/javascript" src="jquery/jquery-3.2.1.slim.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-</body>
-
-</html>
+<?include "footer.phtml"?>
