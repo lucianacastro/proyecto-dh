@@ -7,3 +7,16 @@ $('.logout').on('click',function(event) {
 	});
 	event.preventDefault();
 })
+
+$(document).ready(function() {
+	var change = false;
+	$('.nav li a').each(function(index){
+		if (this.href.trim() == window.location) {
+			$(this).parent().addClass("active");
+			change = true;
+		}
+	});
+	if(!change) {
+		$('.nav li:first').addClass("active");
+	}
+});
