@@ -1,4 +1,4 @@
-<?
+<?php
 include_once "init.php";
 
 //esto es para que si está logeado no pueda acceder al form de login

@@ -14,11 +14,11 @@
 						</div>
 						
 						
-						<? if (isset($errors)): ?>
-							<? foreach($errors as $fieldName => $message): ?>
+						<?php if (isset($errors)): ?>
+							<?php foreach($errors as $fieldName => $message): ?>
 							<div class="alert alert-danger" role="alert"><?= $message ?></div>
-							<? endforeach ?>
-						<? endif ?>
+							<?php endforeach ?>
+						<?php endif ?>
 
 					</div>	
 				</div>

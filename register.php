@@ -36,7 +36,7 @@
 	}
 ?>
 
-<? include "header.phtml" ?>
+<?php include "header.phtml" ?>
 <div class="container">
 	<div class="row">
 
@@ -51,9 +51,9 @@
 						<? if (isset($errores)): ?>
 							<div class="alert alert-danger" role="alert">
 								<ul>
-									<? foreach($errores as $fieldName => $message): ?>
+									<?php foreach($errores as $fieldName => $message): ?>
 										<li><?= $message ?></li>
-									<? endforeach ?>
+									<?php endforeach ?>
 								</ul>
 							</div>
 						<? endif ?>
@@ -80,10 +80,10 @@
 			  	<div class="col-sm-8">
 				  	<select class="form-control" id="inputEquipo" name="inputEquipo">
 				  		<option>-- Elegí tu club --</option>
-				  		<? foreach ($arrayEquipos as $value): ?>
+				  		<?php foreach ($arrayEquipos as $value): ?>
 				  			<option <?= $value == @$_POST['inputEquipo'] ? 'selected' : ''?> >
 				  				<?= $value ?></option>
-				  		<? endforeach ?>
+				  		<?php endforeach ?>
 					
 					</select>
 				</div>
@@ -126,4 +126,4 @@
 	</div>
 </div>
 
-<?include "footer.phtml"?>
+<?php include "footer.phtml"?>

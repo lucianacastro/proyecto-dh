@@ -1,5 +1,5 @@
-<? include "init.php" ?>
-<? include "header.phtml" ?>
+<?php include "init.php" ?>
+<?php include "header.phtml" ?>
 
 <div class="container">
 	<div class="row">
@@ -27,4 +27,4 @@
 	</div>
 </div>
 
-<? include "footer.phtml" ?>
+<?php include "footer.phtml" ?>

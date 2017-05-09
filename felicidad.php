@@ -1,6 +1,6 @@
-<? include "init.php" ?>
-<? include "header.phtml" ?>
+<?php include "init.php" ?>
+<?php include "header.phtml" ?>
 
 	<h1>Bienvenido a TeamUp!</h1>
 
-<? include "footer.phtml" ?>
+<?php include "footer.phtml" ?>
