@@ -48,7 +48,7 @@
 					<div class="col-sm-offset-4 col-sm-8">
 						<h1>Registrate!</h1>
 						
-						<? if (isset($errores)): ?>
+						<?php if (isset($errores)): ?>
 							<div class="alert alert-danger" role="alert">
 								<ul>
 									<?php foreach($errores as $fieldName => $message): ?>
@@ -56,7 +56,7 @@
 									<?php endforeach ?>
 								</ul>
 							</div>
-						<? endif ?>
+						<?php endif ?>
 
 					</div>	
 				</div>
