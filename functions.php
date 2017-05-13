@@ -61,6 +61,18 @@ function get_user_by_email($email) {
 	return False;
 }
 
+function remember_login_email($email) {
+	$expires = time() + 60*60*24*7; // 7 días
+	setcookie('login_email', $email, $expires);
+}
+
+function get_remembered_login_email() {
+	if(isset($_COOKIE['login_email'])) {
+		return $_COOKIE['login_email'];
+	} 
+	return '';
+}
+
 
 // Funciones Tami:
 

@@ -11,14 +11,18 @@ if(is_logged_in()) {
 if (!empty($_POST)) {
 
 	$errors = validate_user_login($_POST);
-	
 
 	if (empty($errors)) {
+		if (isset($_POST['remember_email'])) {
+			remember_login_email($_POST['email']);
+		}
 		login_user($_POST);
 		header("Location: success.php");
 		exit();
 	}
 }
+
+
 
 include "header.phtml";
 
