@@ -10,7 +10,6 @@ function get_error_css_class($error) {
 }
 
 
-//referenciar a info guardada en el json y borrar variables user1
 function validate_user_login (array $data) {
 	$errors = array();
 
@@ -61,6 +60,7 @@ function get_user_by_email($email) {
 	return False;
 }
 
+//cookie para que recuerde el email si el usuario tilda "recordarme"
 function remember_login_email($email) {
 	$expires = time() + 60*60*24*7; // 7 días
 	setcookie('login_email', $email, $expires);

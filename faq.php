@@ -1,5 +1,10 @@
-<?php include "init.php" ?>
-<?php include "header.phtml" ?>
+<?php
+
+	include "init.php";
+	$body_class = 'body-faqs';
+	include "header.phtml";
+
+?>
 
 <div class="container">
 	<div class="row">
@@ -15,7 +20,7 @@
 				<dd>Sí, podés registrarte y disfrutar de los servicios gratis!</dd>	
 
 				<dt>¿Cómo comienzo a usar Team-up?</dt>
-				<dd>Comenzar a usar Team-up es muy fácil! Hacé click <a class="links" href="register.html">aquí</a>, completá el formulario y comenzá a disfrutar. </dd>
+				<dd>Comenzar a usar Team-up es muy fácil! Hacé click <a class="links" href="register.php">aquí</a>, completá el formulario y comenzá a disfrutar. </dd>
 
 				<dt>¿Cómo recupero usuario y contraseña?</li> 
 				<dd>Dentro del Portal, ingresando en “Home” “Olvidé mi contraseña”.</dd>

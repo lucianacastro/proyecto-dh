@@ -1,5 +1,6 @@
 <?php
 include_once "init.php";
+$body_class = 'body-login';
 
 //esto es para que si está logeado no pueda acceder al form de login
 if(is_logged_in()) {
@@ -21,8 +22,6 @@ if (!empty($_POST)) {
 		exit();
 	}
 }
-
-
 
 include "header.phtml";
 

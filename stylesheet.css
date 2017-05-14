@@ -6,6 +6,29 @@ nav {
 	background-color: black;
 }
 
+ul.navbar-nav {
+	width: 140%;
+}
+
+.nav li a {
+	border-right: 1px solid white;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	margin-top: 10px;
+}
+
+.nav li:nth-last-of-type(1) a {
+	border-right: none;
+}
+
+.body-login {
+	background-color: black;
+}
+
+.logo img {
+	width: 100%;
+}
+
 .background {
 	position: fixed;
 	top: 0;
@@ -34,9 +57,6 @@ dt {
 	margin-top: 30px;
 }
 
-.logo {
-	margin-left: -100px;
-}
 
 .home-text {
 	padding: 20px;
@@ -53,10 +73,10 @@ dt {
 
 .login-button {
 	border-radius: 20px;
-	padding-right: 55px;
-	padding-left: 55px; 
+	padding: 8px 55px;
 	font-size: 12px;
 	text-transform: uppercase;
+
 }
 
 .color-check {
@@ -72,8 +92,20 @@ dt {
 	text-decoration: underline;
 }
 
+/* FAQS*/
+
+.body-faqs {
+	
+	background-color: rgb(242, 242, 242);
+}
 
 
+@media (min-width: 768px) {
+  .logo img {
+    width: 140%;
+    margin-left: -20%;
 
+  }
+}
 
 
