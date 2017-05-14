@@ -23,31 +23,40 @@
 			</button> 
 		</div> 
 
+		
+		
 		<div class="row">
-		<div class="col-sm-offset-7 col-sm-4">
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9"> 
-			<ul class="nav navbar-nav"> 
-				<?php if (!is_logged_in()): ?>
-					<li><a href="login.php">Iniciá sesión</a></li> 
-					<li><a href="register.php">Registrate</a></li> 
-				<?php endif ?>
-				<li><a href="faq.php">FAQ's</a></li>
+			<div class="col-sm-7">
+				<img src="images/logo_TeamUp-ss.png" class="header-img">
+			</div>
+			
+			<div class="col-sm-4">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9"> 
+				
+				
+					
+					<ul class="nav navbar-nav"> 
+						<?php if (!is_logged_in()): ?>
+							<li><a href="login.php">Iniciá sesión</a></li> 
+							<li><a href="register.php">Registrate</a></li> 
+						<?php endif ?>
+						<li><a href="faq.php">FAQ's</a></li>
 
-        		<?php if (is_logged_in()): ?>
-	        		<li class="dropdown">
-	          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= @$_SESSION['user']['nombre'] ?> <span class="caret"></span></a>
-	          			
-	          			<ul class="dropdown-menu">
-				            <li><a href="#">Mi perfil</a></li>
-				            <li role="separator" class="divider"></li>
-				            <li><a class="logout" href="#">Cerrar sesión</a></li>
-				        </ul>
-				    </li>
-			    <?php endif ?>
-			</ul>
+		        		<?php if (is_logged_in()): ?>
+			        		<li class="dropdown">
+			          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= @$_SESSION['user']['nombre'] ?> <span class="caret"></span></a>
+			          			
+			          			<ul class="dropdown-menu">
+						            <li><a href="#">Mi perfil</a></li>
+						            <li role="separator" class="divider"></li>
+						            <li><a class="logout" href="#">Cerrar sesión</a></li>
+						        </ul>
+						    </li>
+					    <?php endif ?>
+					</ul>
 
-		</div> 
-		</div>
+				</div> 
+			</div>
 		</div>
 	</div> 
 </nav>
