@@ -92,6 +92,15 @@ dt {
 	color: white;
 }
 
+.faq .links {
+	color: black;
+}
+
+.faq .links:hover {
+	color: black;
+	text-decoration: underline;
+}
+
 .links {
 	color: white;
 }
@@ -132,8 +141,6 @@ dt {
 .faq-section .faq h2 {
 	font-size: 14px;
 }
-
-
 
 
 
