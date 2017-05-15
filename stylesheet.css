@@ -51,6 +51,7 @@ ul.navbar-nav {
 	background-image: url(images/img_Home.jpg);
 } 
 
+
 .login-form-container:before {
 	position: absolute;
 	bottom: -100px;
@@ -132,6 +133,7 @@ dt {
 	background-color: white;
 	overflow: hidden;
 	box-shadow: 2px 2px 5px #999;
+	padding-right: 10px;
 }
 
 .faq-section img {
