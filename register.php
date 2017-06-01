@@ -64,13 +64,13 @@
 			  <div class="form-group <?= isset($errores) ? get_error_css_class(@$errores['name']) : '' ?>">
 			    <label for="inputName" class="col-sm-4 control-label">Nombre</label>
 			    <div class="col-sm-8">
-			      <input type="text" class="form-control" id="inputName" placeholder="Nombre" value="<?= @$_POST['name'] ?>" name="inputName">
+			      <input type="text" class="form-control" id="inputName" placeholder="Nombre" value="<?= @$_POST['inputName'] ?>" name="inputName">
 			    </div>
 			  </div>
 			  <div class="form-group <?= isset($errores) ? get_error_css_class(@$errores['surname']) : '' ?>">
 			    <label for="inputName" class="col-sm-4 control-label">Apellido</label>
 			    <div class="col-sm-8">
-			      <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" value="<?= @$_POST['surname'] ?>" name="inputApellido">
+			      <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" value="<?= @$_POST['inputApellido'] ?>" name="inputApellido">
 			    </div>
 			  </div>
 
