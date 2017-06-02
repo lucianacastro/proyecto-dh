@@ -55,5 +55,25 @@ Optativos:
 
 - Al cliente le gustaría que haya una página que permita editar la información del usuario.
 
+## Sprint 3
+
+Fecha de entrega 12/6 (Lunes)
+
+Consignas:
+
+- El cliente pide que el código esté organizado bajo el paradigma de Programación Orientado a Objetos para mejorar la comunicación.
+
+- El cliente pide que bajo la misma estructura de objetos el soporte donde se guarda la información sea una base de datos SQL
+
+- El cliente pide que haya un script php que se encargue de:
+
+- Crear las tablas en la base de datos
+- Migrar los usuarios ya existentes en JSON a la nueva base de datos
+
+Optativo:
+
+- El cliente pide tener en consideración que así como el código ahora funcionará con una base de datos MySQL, nos gustaría que el código este preparado para que cambiar el tipo de base de datos sea sencillo. Por ejemplo, si quisieramos volver a JSON, debería ser algo sencillo.
+
+
 
 
