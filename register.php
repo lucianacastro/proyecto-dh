@@ -100,6 +100,18 @@
 			</div>
 
 
+			<div class="form-group <?= isset($errores) ? get_error_css_class(@$errores['email']) : '' ?>">
+			    <label for="imgProfile" class="col-sm-4 control-label">Foto de perfil</label>
+			    <div class="col-sm-8">
+			    	<div class="input-group">
+			    		<input type="file" class="form-control" id="profilePic" name="profilePic" value="<?= @$_POST['profilePic'] ?>">
+			    	</div>
+			    </div>
+			</div>
+
+
+
+
 			  <div class="form-group <?= isset($errores) ? get_error_css_class(@$errores['password']) : '' ?>">
 			    <label for="inputPassword3" class="col-sm-4 control-label">Nueva contraseña</label>
 			    <div class="col-sm-8">

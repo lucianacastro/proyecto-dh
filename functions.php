@@ -73,6 +73,17 @@ function get_remembered_login_email() {
 	return '';
 }
 
+function save_image() {
+	if ($_FILES["profilePic"]["error"] == UPLOAD_ERR_OK) {
+		$name=$_FILES["profilePic"]["name"]; 
+		$file=$_FILES["profilePic"]["tmp_name"];
+		$ext = pathinfo($name, PATHINFO_EXTENSION); $myFile = dirname(__FILE__);
+		$myFile = $myFile . "/img/";
+		$myFile = $myFile . "newImage." . $ext;
+		move_uploaded_file($file, $$myFile); 
+	}	
+} 
+
 
 // Funciones Tami:
 

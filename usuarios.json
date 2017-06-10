@@ -1,11 +1,5 @@
-{"nombre":"Dario","apellido":"Sus","email":"dario@dh.com","password":"$2y$10$hRyaAlNVdAB.kKCrYY0cj.8phfR\/e0gC\/R.6wWhMjYJDVmas60YdG","sexo":"0","id":1}
-{"nombre":"Dario","apellido":"Sus","email":"dario2@dh.com","password":"$2y$10$IDmG0.XzGfjwrFD\/dXqyB.ygmjj9bzh2diRz5.oe3NebSORvYmKMG","sexo":"0","id":2}
-{"nombre":"Tamara","apellido":"Nerini","email":"tamitanerini@hotmail.com","password":"$2y$10$kWiTxgskSB64IjoO2K6yrupshZfGZzjeXR.bcLSjnw6MacIENz9Vy","inputEquipo":"Tigre","id":1}
-{"nombre":"Cosme","apellido":"Fulanito","email":"lucianaycastro@gmail.com","password":"$2y$10$IdCKO08JDlpRxFIEtbffJOJJc1GA3jRJ5Glt6zDFb8wvETwLDi6Qe","inputEquipo":"Club Atl\u00e9tico Independiente","id":2}
-{"nombre":"luciana","apellido":"castro","email":"luciana@gmail.com","password":"$2y$10$N\/7M13Prib7iCvZkZPYpgOKbPMtpmhM6VkCj4U3m8vF000pXJLXKW","inputEquipo":"Club Atl\u00e9tico Independiente","id":3}
-{"nombre":"hola","apellido":"quetal","email":"lucia@gmail.com","password":"$2y$10$uiQJVUtM1ripOKMN6dw.jeSeqquLXBeEb3XE9GN.EPSPej\/XNEud.","inputEquipo":"Club Atl\u00e9tico Independiente","id":4}
-{"nombre":"ger","apellido":"bort","email":"lua@gmail.com","password":"$2y$10$QhY.QAZ.f9jPij4oG6u1.ebHgKHxXlbG\/S3NI0ixgo\/MiumdQ9mea","inputEquipo":"Club Atl\u00e9tico Independiente","id":5}{"nombre":"luciana","apellido":"castro","email":"lu@gmail.com","password":"$2y$10$SaALDHmRqUYwwO6Ju1.2YOsNZ24IptuiGEbZC59\/D.yoj1lR6F2CS","inputEquipo":"Club Atl\u00e9tico Independiente","id":1}
-{"nombre":"luciana","apellido":"castro","email":"lu@gmail.com","password":"$2y$10$hywZFuaLiHYWWgAKcEBSS.ZKEIy6Lg8trGHFzRKak0rzrEmJtEyQe","inputEquipo":"Club Atl\u00e9tico Independiente","id":1}
-{"nombre":"gera","apellido":"bor","email":"gera@gmail.com","password":"$2y$10$30kYat8gTSO8ihTqRw5ZDOlgDYDC2FJTnlZX5dF6tkBJJNLE\/udi6","inputEquipo":"Club Atl\u00e9tico Boca Junior","id":1}
-{"nombre":"matias","apellido":"conde","email":"matias.leandro.conde@gmail.com","password":"$2y$10$xsD52fWwm76PrEe7DLh0i.IHBPCJLAQLZMXsU3A0G9QCNP2nySg9K","inputEquipo":"Club Atl\u00e9tico Boca Junior","id":2}
-{"nombre":"Luciana","apellido":"Castro","email":"lyc@gmail.com","password":"$2y$10$4\/14nfGawVyJ05vo0PFU8OOkzMJsQPVbUEYe9Iz1UgaP3\/1YQowL.","inputEquipo":"Club Atl\u00e9tico Independiente","id":3}
+{"nombre":"Cosme","apellido":"Fulanito","email":"cosme@gmail.com","password":"$2y$10$GH\/4yF2AoAmrmkpWZHSUm.5w9uFl9WRJmq96tzZbE7w9y5\/sG2mtu","inputEquipo":"Club Atl\u00e9tico Independiente","id":1}
+{"nombre":"Cosme","apellido":"Fulanito","email":"cosmef@gmail.com","password":"$2y$10$PGrM1Aj\/IS5j44D0JiFZZupaKxpIDSvRbCDIjYtkfbQS9VSQkikJS","inputEquipo":"Club Atl\u00e9tico River Plate","id":2}
+{"nombre":"Cosme","apellido":"Fulanito","email":"cosmefu@gmail.com","password":"$2y$10$raM95FAjNh\/vuj.qi0LrhO9poePah8yITcHzZN56VJqBNc65VF7xi","inputEquipo":"-- Eleg\u00ed tu club --","id":3}
+{"nombre":"Cosme","apellido":"Fulanito","email":"cosmeful@gmail.com","password":"$2y$10$426dMYTfNeBD7990FwqtqecQ8MylzY1I\/0ZjHxP5XvYNsFW3SVc12","inputEquipo":"Club Atl\u00e9tico River Plate","id":4}
+{"nombre":"Cosme","apellido":"Fulanito","email":"cosmefula@gmail.com","password":"$2y$10$tp6Dj7.1VWAhGT1nHTKSKeW4zi\/eDrPoKRmLWFC2V4rVmCNCNxi1q","inputEquipo":"Club Atl\u00e9tico River Plate","id":5}
