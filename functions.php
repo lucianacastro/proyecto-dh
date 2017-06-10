@@ -1,35 +1,16 @@
 <?php
 //Funciones Luciana:
-
+// class formLogin
 function get_error_css_class($error) {
-	if ($error){
-		return 'has-error';
-	} else {
-		return 'has-success';
-	}
+
 }
 
 
 function validate_user_login (array $data) {
-	$errors = array();
+		
+	}
 
-	if (empty($data['email'])) {
-		$errors['email'] = "Ingrese su e-mail";
-	} else {
-		$user = get_user_by_email($data['email']);
-		if ($user == False) {
-			$errors['email'] = "El e-mail ingresado es incorrecto";
-		} elseif (empty($data['password'])) {
-			$errors['password'] = "Ingrese su contraseña";
-		} elseif (!password_verify($data['password'], $user['password'])) {
-			$errors['password'] = "La contraseña es incorrecta";
-		}
-	}	
-	
-	return $errors;
-}
-
-
+//armar class session
 function login_user (array $data) {
 	$_SESSION['user'] = get_user_by_email($data['email']);
 }
@@ -38,26 +19,9 @@ function logout_user () {
 	session_destroy();
 }
 
+
 function is_logged_in () {
 	return (!empty($_SESSION['user']));
-}
-
-function get_users() {
-	$txt = file_get_contents('usuarios.json');
-	$json_list = explode(PHP_EOL, $txt);
-	$users = array_map(function($json) {
-		return json_decode($json, true);
-	}, $json_list);
-	return $users;
-}
-
-function get_user_by_email($email) {
-	foreach (get_users() as $user) {
-		if($user['email'] == $email) {
-			return $user;
-		}
-	}
-	return False;
 }
 
 //cookie para que recuerde el email si el usuario tilda "recordarme"
@@ -73,6 +37,35 @@ function get_remembered_login_email() {
 	return '';
 }
 
+
+
+
+
+
+//class db
+function get_users() {
+
+}
+function get_user_by_email($email) {
+}
+
+
+	function existeElMail($mail)
+	{
+	}
+
+	function guardarUsuario($miUsuario) 
+	{
+	
+	}
+
+function traerNuevoId()
+	{
+
+	}
+
+
+
 function save_image() {
 	if ($_FILES["profilePic"]["error"] == UPLOAD_ERR_OK) {
 		$name=$_FILES["profilePic"]["name"]; 
@@ -87,8 +80,8 @@ function save_image() {
 
 // Funciones Tami:
 
-function validarUsuario($miUsuario)
-	{
+//ex validarUsuario
+	public function validate() {
 		$errores = [];
 
 		if (trim($miUsuario["inputName"]) == "")
@@ -126,18 +119,8 @@ function validarUsuario($miUsuario)
 		return $errores;
 	}
 
-	function existeElMail($mail)
-	{
-		return get_user_by_email($mail);
-	}
 
-	function guardarUsuario($miUsuario) 
-	{
-		$usuarioJSON = json_encode($miUsuario);
-
-		file_put_contents("usuarios.json", $usuarioJSON . PHP_EOL, FILE_APPEND);
-	}
-
+//user constructor
 	function crearUsuario($miUsuario)
 	{
 		$usuario = [
@@ -152,21 +135,7 @@ function validarUsuario($miUsuario)
 		return $usuario;
 	}
 
-	function traerNuevoId()
-	{
-		$usuarios = get_users();
-
-		//Para quitar el último ENTER
-		array_pop($usuarios);
-
-		if (count($usuarios) == 0) {
-			return 1;
-		}
-
-		$ultimoUsuario = $usuarios[count($usuarios) - 1];
-
-		return $ultimoUsuario["id"] + 1;
-	}
+	
 
 	function enviarAFelicidad()
 	{
