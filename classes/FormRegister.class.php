@@ -11,10 +11,21 @@ class FormRegister {
 	private $password;
 	private $repeatPassword;
 	private $teamName;	
-	private $teamNames = ['Club Atlético Boca Junior','Club Atlético Independiente','Club Atlético River Plate','Racing Club','Club Atlético San Lorenzo de Almagro','Club Atlético Huracán','Club Atlético Banfield','Club Atlético Belgrano',"Club Atlético Newell's Old Boys",'Club Ferro Carril Oeste','Tigre'];
+	private $teamNames = [
+		'Club Atlético Boca Junior',
+		'Club Atlético Independiente',
+		'Club Atlético River Plate',
+		'Racing Club',
+		'Club Atlético San Lorenzo de Almagro',
+		'Club Atlético Huracán',
+		'Club Atlético Banfield',
+		'Club Atlético Belgrano',
+		'Club Atlético Newell\'s Old Boys',
+		'Club Ferro Carril Oeste',
+		'Tigre'
+	];
 
-	public function __construct($name, $lastname, $email, $password, $repeatPassword, $teamName) {
-		
+	public function __construct($name = '', $lastname = '', $email = '', $password = '', $repeatPassword = '', $teamName = '') {
 		$this->setName($name);
 		$this->setLastname($lastname);
 		$this->setEmail($email);
@@ -23,10 +34,8 @@ class FormRegister {
 		$this->setTeamName($teamName);
 	}
 
-	
-
 	public function getName() {
-		return $this->inputName;
+		return $this->name;
 	} 
 
 	public function getLastname() {
@@ -55,7 +64,7 @@ class FormRegister {
 	}
 
 	public function setLastname($lastname) {
-		$this->apellido = $lastname;
+		$this->lastname = $lastname;
 	}
 
 	public function setEmail($email) {
@@ -71,50 +80,63 @@ class FormRegister {
 	}
 
 	public function setTeamName($teamName) {
-		$this->inputEquipo = $teamName;
+		$this->teamName = $teamName;
 	}
 
 	public function getTeamNames() {
+		asort($this->teamNames);
 		return $this->teamNames;
 	}
 
 	public function validate() {
 		$errors = [];
 
-		if (trim($this->getName()) == "")
-		{
-			$errors['name'] = "Falta el Nombre";
+		if (trim($this->getName()) == '') {
+			$errors['name'] = 'Falta el Nombre';
 		}
-		if (trim($this->getLastname()) == "")
-		{
-			$errors['surname'] = "Falta el Apellido";
+		if (trim($this->getLastname()) == '') {
+			$errors['lastname'] = 'Falta el Apellido';
 		}
-		if (trim($this->getPassword()) == "")
-		{
-			$errors['password'] = "Falta la Password";
+		if (trim($this->getPassword()) == '') {
+			$errors['password'] = 'Falta la Password';
 		}
-		if (trim($this->getRepeatPassword()) == "")
-		{
-			$errors['password2'] = "Falta repetir contraseña";
+		if (trim($this->getRepeatPassword()) == '') {
+			$errors['repeatPassword'] = 'Falta repetir contraseña';
 		}
-		if ($this->getPassword() != $this->getRepeatPassword())
-		{
-			$errors['repeat-password'] = "Las contraseñas son distintas";
+		if ($this->getPassword() != $this->getRepeatPassword()) {
+			$errors['repeatPassword'] = 'Las contraseñas son distintas';
 		}
-		if ($this->getEmail() == "")
-		{
-			$errors['email'] = "Falta el e-mail";
+		if ($this->getEmail() == '') {
+			$errors['email'] = 'Falta el e-mail';
 		}
-		if (!filter_var($this->getEmail(), FILTER_VALIDATE_EMAIL))
-		{
-			$errors['email-erroneo'] = "El e-mail tiene forma fea";
+		if (!filter_var($this->getEmail(), FILTER_VALIDATE_EMAIL)) {
+			$errors['email'] = 'El e-mail tiene forma fea';
 		}
 		$db = DB::getInstance();
-		if ($db->existeElMail($this->getEmail()))
-		{
-			$errors['user'] = "Usuario ya registrado";
+		if ($db->existeElMail($this->getEmail())) {
+			$errors['user'] = 'Usuario ya registrado';
 		}
 		return $errors;
+	}
+
+	// FIXME: eliminar metodo repetido en FormLogin
+	public function getErrorCssClass($error) {
+		if ($error){
+			return 'has-error';
+		} else {
+			return 'has-success';
+		}
+	}
+
+	public function getRegistratingUser() {
+		return new User(
+			Null,
+			$this->getName(),
+			$this->getLastname(),
+			$this->getEmail(),
+			$this->getPassword(),
+			$this->getTeamName()
+		);
 	}
 
 }

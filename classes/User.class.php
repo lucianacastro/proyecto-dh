@@ -9,12 +9,18 @@ class User {
 	private $password;
 	private $inputEquipo;	
 
-	public function __construct($id, $name, $lastname, $email, $password, $teamName) {
-		$this->setId($id);
+	public function __construct($id = '', $name = '', $lastname = '', $email = '', $password = '', $teamName = '') {
+		if (empty($id)) {
+			// es un usuario nuevo, asumimos que el password no viene hasheado
+			$this->setPassword($password);
+		} else {
+			// es un usuario existente, asumimos que el password sí viene hasheado
+			$this->setId($id);
+			$this->password = $password; // se saltea el hashing para que no hashee dos veces.
+		}
 		$this->setName($name);
 		$this->setLastname($lastname);
 		$this->setEmail($email);
-		$this->password = $password; //se saltea el hashing para que no hashee dos veces.
 		$this->setTeamName($teamName);
 	}
 

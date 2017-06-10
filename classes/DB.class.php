@@ -57,25 +57,27 @@ class DB {
 	}
 
 	public function guardarUsuario(User $user) {
+		if (empty($user->getId())) {
+			// el usuario se está creando
+			$user->setId($this->traerNuevoId());
+		} else {
+			// el usuario se está actualizando
+		}
 		$user_assoc = $this->_getAssocArrayFromUser($user);
 		$usuarioJSON = json_encode($user_assoc);
 
-		file_put_contents($this->usersFiles, $usuarioJSON . PHP_EOL, FILE_APPEND);
+		file_put_contents($this->usersFile, $usuarioJSON . PHP_EOL, FILE_APPEND);
 	}
 
-	function traerNuevoId()
-	{
+	public function traerNuevoId() {
 		$usuarios = $this->getUsers();
-
 		//Para quitar el último ENTER
 		array_pop($usuarios);
-
 		if (count($usuarios) == 0) {
 			return 1;
 		}
 
 		$ultimoUsuario = $usuarios[count($usuarios) - 1];
-
 		return $ultimoUsuario->getId() + 1;
 	}
 
