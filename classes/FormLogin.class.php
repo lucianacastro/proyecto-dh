@@ -1,12 +1,14 @@
 <?php
 
+require_once('DB.class.php');
+
 class FormLogin {
 	//atributos
 	private $email;
 	private $password;
 	private $expires;
 
-	public function __construct($email, $password){
+	public function __construct($email = '', $password = ''){
 		$this->setEmail($email);
 		$this->setPassword($password);
 		$this->expires = time() + 60*60*24*7; // 7 días

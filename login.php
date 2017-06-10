@@ -1,26 +1,32 @@
 <?php
 include_once "init.php";
+require_once('classes/FormLogin.class.php');
 $body_class = 'body-login';
 
 //esto es para que si está logeado no pueda acceder al form de login
-if(is_logged_in()) {
+
+
+if ($session->isLoggedIn()) {
 	header("Location: success.php");
 	exit();
 }
 
 
 if (!empty($_POST)) {
-
-	$errors = validate_user_login($_POST);
+	$formLogin = new FormLogin($_POST['email'], $_POST['password']);
+	$errors = $formLogin->validate();
 
 	if (empty($errors)) {
 		if (isset($_POST['remember_email'])) {
-			remember_login_email($_POST['email']);
+			$formLogin->rememberLoginEmail();
 		}
-		login_user($_POST);
+		$user = $db->getUserByEmail($_POST['email']);
+		$session->loginUser($user);
 		header("Location: success.php");
 		exit();
 	}
+} else {
+	$formLogin = new FormLogin();
 }
 
 include "header.phtml";

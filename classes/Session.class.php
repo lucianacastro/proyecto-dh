@@ -1,29 +1,29 @@
 <?php
 
+require_once('User.class.php');
+require_once('Singleton.trait.php');
+
+
 class Session {
-	public function loginUser (User $user) {
-		$_SESSION['user'] = $user;
+	use Singleton;
+
+	public function loginUser(User $user) {
+		$_SESSION['user'] = serialize($user);
 	}
 
-	public function logoutUser () {
+	public function logoutUser() {
 		session_destroy();
 	}
 
-
-	public function isLoggedIn () {
+	public function isLoggedIn() {
 		return (!empty($_SESSION['user']));
 	}
 
-	//cookie para que recuerde el email si el usuario tilda "recordarme"
-	function remember_login_email($email) {
-		$expires = time() + 60*60*24*7; // 7 días
-		setcookie('login_email', $email, $expires);
+	public function getUser() {
+		if ($this->isLoggedIn()) {
+			return unserialize($_SESSION['user']);
+		}
+		return False;
 	}
 
-	function get_remembered_login_email() {
-		if(isset($_COOKIE['login_email'])) {
-			return $_COOKIE['login_email'];
-		} 
-		return '';
-	}
 }

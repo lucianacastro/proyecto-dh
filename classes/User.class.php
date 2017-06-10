@@ -14,7 +14,7 @@ class User {
 		$this->setName($name);
 		$this->setLastname($lastname);
 		$this->setEmail($email);
-		$this->setPassword($password);
+		$this->password = $password; //se saltea el hashing para que no hashee dos veces.
 		$this->setTeamName($teamName);
 	}
 

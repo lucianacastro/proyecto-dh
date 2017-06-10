@@ -1,17 +1,10 @@
 <?php
 
+require_once('User.class.php');
+require_once('Singleton.trait.php');
+
 class DB {
-
-	// Singleton
-	private static $instance; // referencia interna a la única instancia de la clase
-	private __construct() {}; // denegar new DB() desde afuera de la clase
-	public static getInstance() { // factory method, permite obtener la instancia de DB
-		if (self::instance) {
-			return self::instance;
-		}
-		return self::instance = new self();
-	}
-
+	use Singleton;
 
 	//atributos
 	private $usersFile = 'usuarios.json';
@@ -34,7 +27,7 @@ class DB {
 			'nombre' => $user->getName(),
 			'apellido' => $user->getLastname(),
 			'email' => $user->getEmail(),
-			'password' => $user->getPassword(),
+			'password' => $user->getPasswordHash(),
 			'inputEquipo' => $user->getTeamName(),
 		];
 	}
