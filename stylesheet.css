@@ -2,6 +2,9 @@ nav {
 	z-index: 1;
 }
 
+.navbar {
+    border-radius: 0px;
+}
 .header-row {
 	padding: 8px 0;
 }

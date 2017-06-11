@@ -8,38 +8,37 @@ class DB {
 
 	//atributos
 	private $usersFile = 'usuarios.json';
+	private $dsn = 'mysql:host=localhost;dbname=teamUp';
+	private $user = 'root';
+	private $password = 'root';
+	private $pdo;
+
+
+	private function __construct() {
+		$this->pdo = new PDO($this->dsn, $this->user, $this->password);
+		$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+	}
 
 
 	private function _getUserFromAssocArray($user_assoc) {
 		return new User(
 			$user_assoc['id'],
-			$user_assoc['nombre'],
-			$user_assoc['apellido'],
+			$user_assoc['name'],
+			$user_assoc['lastname'],
 			$user_assoc['email'],
 			$user_assoc['password'],
-			$user_assoc['inputEquipo']
+			$user_assoc['team_name']
 		);
 	}
 
-	private function _getAssocArrayFromUser(User $user) {
-		return [
-			'id' => $user->getId(),
-			'nombre' => $user->getName(),
-			'apellido' => $user->getLastname(),
-			'email' => $user->getEmail(),
-			'password' => $user->getPasswordHash(),
-			'inputEquipo' => $user->getTeamName(),
-		];
-	}
 	
 	public function getUsers() {
-		$txt = file_get_contents($this->usersFile);
-		$txt_lines = explode(PHP_EOL, $txt);
-		$users = array_map(function($txt_line) {
-			$user_assoc = json_decode($txt_line, true);
-			// ['nombre' => 'Pepe', 'apellido' => 'Hola']
+		$query_get_user = $this->pdo->prepare("SELECT id, name, lastname, email, password, team_name FROM users ORDER BY name");
+		$query_get_user->execute();
+		$users_assoc_list = $query_get_user->fetchAll(PDO::FETCH_ASSOC);
+		$users = array_map(function($user_assoc) {
 			return $this->_getUserFromAssocArray($user_assoc);
-		}, $txt_lines);
+		}, $users_assoc_list);
 		return $users;
 	}
 	
@@ -59,28 +58,45 @@ class DB {
 	public function guardarUsuario(User $user) {
 		if (empty($user->getId())) {
 			// el usuario se está creando
-			$user->setId($this->traerNuevoId());
+			$sql = "
+				INSERT INTO users (name, lastname, email, password, team_name)
+				VALUES (
+					'{$user->getName()}',
+					'{$user->getLastname()}',
+					'{$user->getEmail()}',
+					'{$user->getPasswordHash()}',
+					'{$user->getTeamName()}'
+				)
+			";
+
+			$query = $this->pdo->prepare($sql);
+		
+			if (!$query->execute()) {
+				// falló
+			}
+
+			$user->setId($this->pdo->lastInsertId());
 		} else {
 			// el usuario se está actualizando
-		}
-		$user_assoc = $this->_getAssocArrayFromUser($user);
-		$usuarioJSON = json_encode($user_assoc);
+			$sql = "
+				UPDATE users (name, lastname, email, password, team_name)
+				VALUES (
+					'{$user->getName()}',
+					'{$user->getLastname()}',
+					'{$user->getEmail()}',
+					'{$user->getPasswordHash()}',
+					'{$user->getTeamName()}'
+				) 
+				WHERE id = {$user->getId()}
+			";
 
-		file_put_contents($this->usersFile, $usuarioJSON . PHP_EOL, FILE_APPEND);
+			$query = $this->pdo->prepare($sql);
+		
+			if (!$query->execute()) {
+				// falló
+			}
+		}		
 	}
-
-	public function traerNuevoId() {
-		$usuarios = $this->getUsers();
-		//Para quitar el último ENTER
-		array_pop($usuarios);
-		if (count($usuarios) == 0) {
-			return 1;
-		}
-
-		$ultimoUsuario = $usuarios[count($usuarios) - 1];
-		return $ultimoUsuario->getId() + 1;
-	}
-
 	
 }
 
