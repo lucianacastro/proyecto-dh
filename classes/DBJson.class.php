@@ -3,7 +3,7 @@
 require_once('User.class.php');
 require_once('Singleton.trait.php');
 
-class DB {
+class DBJson {
 	use Singleton;
 
 	//atributos
