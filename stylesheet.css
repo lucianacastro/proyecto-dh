@@ -155,7 +155,8 @@ dt {
 h1.success-title {
 	position: relative;
 	margin: 0 auto;
-	z-index: 50; 
+	z-index: 50;
+	font-family: 'Roboto', sans-serif; 
 	color: #fff;
 }
 
@@ -182,7 +183,6 @@ h1.success-title {
 	display: block;
 	position: relative;
 	margin: 0 auto;
-
 }
 
 
