@@ -1,5 +1,8 @@
 <?php
 
+//El singleton es un patrón de diseño.
+//Lo hacemos para asegurarnos que haya una sola instancia de la clase, en este caso para que haya una sola conexión a la base de datos.
+
 trait Singleton {
 	protected static $instance; // referencia interna a la única instancia de la clase
 	private function __construct() {
