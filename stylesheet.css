@@ -2,6 +2,9 @@ nav {
 	z-index: 1;
 }
 
+.navbar {
+    border-radius: 0px;
+}
 .header-row {
 	padding: 8px 0;
 }
@@ -144,7 +147,68 @@ dt {
 	font-size: 14px;
 }
 
+/* páginas de succes */
+.background.background-succes {
+	background-image: url(images/img_Form-landscape.jpg);
+}
 
+h1.success-title {
+	position: relative;
+	margin: 0 auto;
+	z-index: 50; 
+	color: #fff;
+}
+
+/* Register */
+
+
+.register-img {
+	position: relative;
+	background-image: url(images/img_Form-ss.jpg);
+	background-size: cover;
+	float: left;
+	padding: 0;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.icon-register-container {
+	position: relative;
+	margin: 0 auto;
+	height: 200px;
+}
+
+.icon-register-container .register-icon {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+
+}
+
+
+.icon-register-container .text-register-icon {
+	position: relative;
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	border-bottom: 1px solid #fff;
+	padding: 0 50px 30px;
+}
+
+.icon-register-container .text-register-icon.trophy {
+	border-bottom: none;
+}
+
+h1.register-title {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+
+label.control-label.label-title {
+	text-align: left;
+	font-size: 12px;
+}
 
 @media (min-width: 768px) {
   .logo img {

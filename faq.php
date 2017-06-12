@@ -110,7 +110,7 @@
 				<img src="images/8_FAQS-ss.png">
 				<div class="faq">
 					<h2>¿Cómo contactarnos?</h2>
-					<p>Podés mandarnos un email a teamup@gmail.com</p>
+					<p>Podés mandarnos un email a contacto@teamup.com</p>
 				</div>
 			</div>
 		</div>

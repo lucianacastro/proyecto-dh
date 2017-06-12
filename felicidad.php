@@ -1,6 +1,9 @@
 <?php include "init.php" ?>
 <?php include "header.phtml" ?>
 
-	<h1>Bienvenido a TeamUp!</h1>
+	<div class="background background-succes"></div>
+	<div class="container">
+		<h1 class="success-title">Bienvenido a TeamUp!</h1>
+	</div>
 
 <?php include "footer.phtml" ?>
