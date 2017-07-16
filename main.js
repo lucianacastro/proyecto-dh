@@ -121,11 +121,6 @@ $(function() {
 		localStorage.setItem('href', 'stylesheet.css');
 	});
 
-	$('#fort').click(function(){
-		$('#theme').attr('href', 'stylesheet-fort.css');
-		localStorage.setItem('href', 'stylesheet-fort.css');
-	});
-
 	$('#ortigoza').click(function(){
 		$('#theme').attr('href', 'stylesheet-ortigoza.css');
 		localStorage.setItem('href', 'stylesheet-ortigoza.css');
@@ -136,12 +131,17 @@ $(function() {
 		localStorage.setItem('href', 'stylesheet-peron.css');
 	});
 
+	$('#fort').click(function(){
+		$('#theme').attr('href', 'stylesheet-fort.css');
+		localStorage.setItem('href', 'stylesheet-fort.css');
+	});
+
+
 	/* Contador de usuarios */
 	renderUserCount();
 	setInterval(renderUserCount, 30000);
 	
 });
-
 
 
 function validateName(value) {
