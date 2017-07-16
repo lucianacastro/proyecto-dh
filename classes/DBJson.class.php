@@ -7,7 +7,7 @@ class DBJson {
 	use Singleton;
 
 	//atributos
-	private $usersFile = 'usuarios.json';
+	private $usersFile = '../usuarios.json';
 
 
 	private function _getUserFromAssocArray($user_assoc) {
