@@ -79,17 +79,6 @@
 			    </div>
 			  </div>
 
-
-			  <div class="form-group <?= isset($errors) ? $formRegister->getErrorCssClass(@$errors['profilePic']) : '' ?>">
-			    <label for="imgProfile" class="col-sm-12 control-label label-title">Foto de perfil</label>
-			    <div class="col-sm-12">
-			    	<div class="col-sm-12 input-group">
-			    		<input type="file" class="form-control col-sm-12" id="profilePic" name="profilePic" value="<?= @$_POST['profilePic'] ?>" placeholder="Subí una foto de perfil">
-			    	</div>
-			    </div>
-			  </div>
-
-
 			  <div class="form-group <?= isset($errors) ? $formRegister->getErrorCssClass(@$errors['password']) : '' ?>">
 			    <label for="password" class="col-sm-12 control-label label-title">Nueva contraseña</label>
 			    <div class="col-sm-12">

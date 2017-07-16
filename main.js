@@ -130,8 +130,16 @@ $(function() {
 		$('#theme').attr('href', 'stylesheet-ortigoza.css');
 		localStorage.setItem('href', 'stylesheet-ortigoza.css');
 	});
-	
 
+	$('#peron').click(function(){
+		$('#theme').attr('href', 'stylesheet-peron.css');
+		localStorage.setItem('href', 'stylesheet-peron.css');
+	});
+
+	/* Contador de usuarios */
+	renderUserCount();
+	setInterval(renderUserCount, 30000);
+	
 });
 
 
@@ -168,7 +176,21 @@ function validateRepeatPassword(valueRepeat, value) {
 	return valueRepeat === value ;
 }
 
+function getUsersCount(callback) {
+	$.ajax({
+		method: 'GET', 
+		url: 'userCount.php',
+	}).done(function(res) {
+		var total = res.total;
+		callback(total);
+	});
+}
 
+function renderUserCount() {
+	getUsersCount(function(total) {
+		$('#number_users').text('Ya somos ' + total + ' usuarios!')
+	});
+}
 
 
 

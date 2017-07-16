@@ -51,8 +51,9 @@ ul.navbar-nav {
 	z-index: 0;
 }
 .background-home {
-	background-image: url(images/img_Home.jpg);
+	background-image: url(images/peron.jpg);
 } 
+
 
 .login-form-container:before {
 	position: absolute;
