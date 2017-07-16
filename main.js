@@ -1,5 +1,9 @@
 $(function() {
 
+	if (localStorage.getItem('href')) {
+		$('#theme').attr('href', localStorage.getItem('href'));	
+	}
+
 	/* Navegación */
 	$('.logout').on('click',function(event) {
 		$.ajax({
@@ -112,6 +116,20 @@ $(function() {
 	});
 
 	/* Themes changes*/
+	$('#original').click(function(){
+		$('#theme').attr('href', 'stylesheet.css');
+		localStorage.setItem('href', 'stylesheet.css');
+	});
+
+	$('#fort').click(function(){
+		$('#theme').attr('href', 'stylesheet-fort.css');
+		localStorage.setItem('href', 'stylesheet-fort.css');
+	});
+
+	$('#ortigoza').click(function(){
+		$('#theme').attr('href', 'stylesheet-ortigoza.css');
+		localStorage.setItem('href', 'stylesheet-ortigoza.css');
+	});
 	
 
 });

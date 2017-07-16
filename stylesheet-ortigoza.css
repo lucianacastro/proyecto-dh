@@ -11,8 +11,17 @@ nav {
 
 
 .navbar-inverse {
-	background-color: black;
+	background-color: #1C3956;
+	border-color: #1C3956;
 }
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+	background-color: #1C3956;
+}
+
+
 
 ul.navbar-nav {
 	width: 140%;
@@ -30,7 +39,7 @@ ul.navbar-nav {
 }
 
 .body-login {
-	background-color: black;
+	background-color: #1C3956;
 }
 
 .body-login .header-img {
@@ -51,7 +60,7 @@ ul.navbar-nav {
 	z-index: 0;
 }
 .background-home {
-	background-image: url(images/img_Home.jpg);
+	background-image: url(images/ortigoza-sm.jpg);
 } 
 
 
@@ -63,7 +72,7 @@ ul.navbar-nav {
 	content: "";
 	display: block; 
 	width: 100%;
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(28, 57, 86, 0.7);
 }
 
 dt {
@@ -213,17 +222,20 @@ label.control-label.label-title {
 /* dropdowns */
 
 ul.dropdown-menu {
-	background-color: #0d0d0d;
+	background-color: #1C3956;
 }
 
 ul.dropdown-menu li a {
 	color: #fff;
 }
+li.dropdown.theme-choice.open a.dropdown-toggle {
+	background-color: #1C3956;
+}
 
 .dropdown-menu > .active > a, 
 .dropdown-menu > .active > a:hover, 
 .dropdown-menu > .active > a:focus {
-	background-color: #0D0D0D;
+	background-color: #1C3956;
 }
 
 @media (min-width: 768px) {
