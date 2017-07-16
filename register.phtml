@@ -59,9 +59,9 @@
 			  	<label for="teamName" class="col-sm-12 control-label label-title">Soy hincha de</label>
 			  	<div class="col-sm-12">
 				  	<select class="form-control" id="teamName" name="teamName">
-				  		<option>-- Elegí tu club --</option>
+				  		<option value="">-- Elegí tu club --</option>
 				  		<?php foreach ($formRegister->getTeamNames() as $teamName): ?>
-				  			<option <?= $teamName == @$_POST['teamName'] ? 'selected' : ''?> >
+				  			<option <?= $teamName == @$_POST['teamName'] ? 'selected' : ''?> value="<?= $teamName ?>">
 				  				<?= $teamName ?></option>
 				  		<?php endforeach ?>
 					
