@@ -13,8 +13,7 @@ $users = $dbjson->getUsers();
 foreach ($users as $user) {
 	$user->setId(Null);
 	$db->guardarUsuario($user);
-	echo'usuario '. $user->getEmail().' insertado';
+	echo'Usuario '. $user->getEmail()." insertado.\n";
 }
 
 echo 'listo';
-

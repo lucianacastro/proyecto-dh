@@ -11,8 +11,17 @@ nav {
 
 
 .navbar-inverse {
-	background-color: black;
+	background-color: #810000;
+	border-color: #810000;
 }
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+	background-color: #810000;
+}
+
+
 
 ul.navbar-nav {
 	width: 140%;
@@ -30,7 +39,7 @@ ul.navbar-nav {
 }
 
 .body-login {
-	background-color: black;
+	background-color: #810000;
 }
 
 .body-login .header-img {
@@ -51,8 +60,9 @@ ul.navbar-nav {
 	z-index: 0;
 }
 .background-home {
-	background-image: url(images/img_Home.jpg);
+	background-image: url(images/fort.jpg);
 } 
+
 
 .login-form-container:before {
 	position: absolute;
@@ -62,17 +72,13 @@ ul.navbar-nav {
 	content: "";
 	display: block; 
 	width: 100%;
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(129,0,0,0.7);
 }
 
 dt {
 	margin-top: 30px;
 }
 
-#number_users {
-	color: #449D44;
-	font-family: 'Roboto', sans-serif;
-}
 
 .home-text {
 	padding: 20px;
@@ -216,18 +222,22 @@ label.control-label.label-title {
 /* dropdowns */
 
 ul.dropdown-menu {
-	background-color: #0d0d0d;
+	background-color: #810000;
 }
 
 ul.dropdown-menu li a {
 	color: #fff;
 }
+li.dropdown.theme-choice.open a.dropdown-toggle {
+	background-color: #810000;
+}
 
 .dropdown-menu > .active > a, 
 .dropdown-menu > .active > a:hover, 
 .dropdown-menu > .active > a:focus {
-	background-color: #0D0D0D;
+	background-color: #810000;
 }
+
 
 @media (min-width: 768px) {
   .logo img {
