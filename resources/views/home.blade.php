@@ -1,0 +1,5 @@
+@include('partials.header') 
+
+@include('partials.login')
+
+@include('partials.footer')

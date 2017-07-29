@@ -1,0 +1,249 @@
+nav {
+	z-index: 1;
+}
+
+.navbar {
+    border-radius: 0px;
+}
+.header-row {
+	padding: 8px 0;
+}
+
+
+.navbar-inverse {
+	background-color: #1C3956;
+	border-color: #1C3956;
+}
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+	background-color: #1C3956;
+}
+
+
+
+ul.navbar-nav {
+	width: 140%;
+}
+
+.nav li a {
+	border-right: 1px solid white;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	margin-top: 10px;
+}
+
+.nav li:nth-last-of-type(1) a {
+	border-right: none;
+}
+
+.body-login {
+	background-color: #1C3956;
+}
+
+.body-login .header-img {
+	display: none;
+}
+
+.logo img {
+	width: 100%;
+}
+
+.background {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-size: cover;
+	z-index: 0;
+}
+.background-home {
+	background-image: url(../images/ortigoza-sm.jpg);
+} 
+
+
+.login-form-container:before {
+	position: absolute;
+	bottom: -100px;
+	top: 0;
+	left: 0;
+	content: "";
+	display: block; 
+	width: 100%;
+	background-color: rgba(28, 57, 86, 0.7);
+}
+
+dt {
+	margin-top: 30px;
+}
+
+
+.home-text {
+	padding: 20px;
+	padding-right: 30px;
+	padding-left: 35px;
+	text-align: center;
+	color: white;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+	asfont-family: 'Lato', sans-serif;
+	asfont-family: 'PT Sans', sans-serif;
+	asfont-family: 'Hind', sans-serif;
+}
+
+.login-button {
+	border-radius: 20px;
+	padding: 8px 55px;
+	font-size: 12px;
+	text-transform: uppercase;
+
+}
+
+.color-check {
+	color: white;
+}
+
+.faq .links {
+	color: black;
+}
+
+.faq .links:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+.links {
+	color: white;
+}
+
+.links:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+/* FAQS*/
+
+.body-faqs {
+	
+	background-color: rgb(242, 242, 242);
+}
+
+.faq-section .definition .faq {
+	float: left;
+}
+
+
+.faqs-title h1 {
+	float: left;
+	font-size: 20px;
+	margin-top: 35px;
+}
+
+.faq-section {
+	background-color: white;
+	overflow: hidden;
+	box-shadow: 2px 2px 5px #999;
+	padding-right: 10px;
+}
+
+.faq-section img {
+	float: left;
+}
+
+.faq-section .faq h2 {
+	font-size: 14px;
+}
+
+/* páginas de succes */
+.background.background-succes {
+	background-image: url(../images/img_Form-landscape.jpg);
+}
+
+h1.success-title {
+	position: relative;
+	margin: 0 auto;
+	z-index: 50; 
+	color: #fff;
+}
+
+/* Register */
+
+
+.register-img {
+	position: relative;
+	background-image: url(../images/img_Form-ss.jpg);
+	background-size: cover;
+	float: left;
+	padding: 0;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.icon-register-container {
+	position: relative;
+	margin: 0 auto;
+	height: 200px;
+}
+
+.icon-register-container .register-icon {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+
+}
+
+
+.icon-register-container .text-register-icon {
+	position: relative;
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	border-bottom: 1px solid #fff;
+	padding: 0 50px 30px;
+}
+
+.icon-register-container .text-register-icon.trophy {
+	border-bottom: none;
+}
+
+h1.register-title {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+
+label.control-label.label-title {
+	text-align: left;
+	font-size: 12px;
+}
+
+/* dropdowns */
+
+ul.dropdown-menu {
+	background-color: #1C3956;
+}
+
+ul.dropdown-menu li a {
+	color: #fff;
+}
+li.dropdown.theme-choice.open a.dropdown-toggle {
+	background-color: #1C3956;
+}
+
+.dropdown-menu > .active > a, 
+.dropdown-menu > .active > a:hover, 
+.dropdown-menu > .active > a:focus {
+	background-color: #1C3956;
+}
+
+@media (min-width: 768px) {
+  .logo img {
+    width: 140%;
+    margin-left: -20%;
+
+  }
+}
+
+
