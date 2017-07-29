@@ -19,26 +19,26 @@
 						</div>
 						
 						
-						<?php if (!empty($errors)): ?>
-							<?php foreach($errors as $fieldName => $message): ?>
-							<div class="alert alert-danger" role="alert"><?= $message ?></div>
-							<?php endforeach ?>
-						<?php endif ?>
+						@if (!empty($errors))
+							@foreach($errors as $fieldName => $message)
+							<div class="alert alert-danger" role="alert">{{$message}}</div>
+							@endforeach
+						@endif
 
 					</div>	
 				</div>
 
-				<div class="form-group <?= !empty($errors) ? $formLogin->getErrorCssClass(@$errors['email']) : '' ?>" >
+				<div class="form-group {{!empty($errors) ? $formLogin->getErrorCssClass(@$errors['email']) : '' }}" >
 			    	<label for="inputEmail3" class="col-sm-4 control-label"></label>
 			    	<div class="col-sm-12">
 				   		<input type="email" class="form-control" id="inputEmail3" placeholder="E-mail" name="email" 
-				   		value="<?= @$_POST['email'] ?: $formLogin->getRememberedLoginEmail() ?>">
+				   		value="{{@$_POST['email'] ?: $formLogin->getRememberedLoginEmail()}}">
 			    	</div>
 				</div>
 
 
 
-			  <div class="form-group <?= !empty($errors) ? $formLogin->getErrorCssClass(@$errors['password']) : '' ?>" >
+			  <div class="form-group {{!empty($errors) ? $formLogin->getErrorCssClass(@$errors['password']) : '' }}" >
 			    <label for="inputPassword3" class="col-sm-4 control-label"></label>
 			    <div class="col-sm-12">
 			      <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Contraseña">
@@ -51,8 +51,8 @@
 			      <div class="checkbox">
 			        <label class="color-check">
 			          <input type="checkbox" name="remember_email"
-			          <?= $formLogin->getRememberedLoginEmail() ? 'checked="checked"' : '' ?>
-			          > Recordarme
+				          {{$formLogin->getRememberedLoginEmail() ? 'checked="checked"' : '' }}
+				          > Recordarme
 			        </label>
 			      </div>
 			    </div>

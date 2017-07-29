@@ -34,14 +34,13 @@ class LoginController extends Controller
 				}
 				$user = $db->getUserByEmail($_POST['email']);
 				$session->loginUser($user);
-				header("Location: /success");
-				exit();
+				return redirect('/success');
 			}
 		} else {
 			$formLogin = new FormLogin();
 		}
 
-		//  FIXME errors es una variable reservada, aparentemente
+		// FIXME errors es una variable reservada, aparentemente
 		return view('home', ['formLogin' => $formLogin, 'body_class' => 'body-login', 'session' => $session, 'errors' => $errors]);
 	}
 

@@ -31,29 +31,29 @@
 					<div class="col-sm-12">
 					
 						
-						<?php if (!empty($errors)): ?>
+						@if (!empty($errors))
 							<div class="alert alert-danger" role="alert">
 								<ul>
-									<?php foreach($errors as $fieldName => $message): ?>
-										<li><?= $message ?></li>
-									<?php endforeach ?>
+									@foreach($errors as $fieldName => $message)
+										<li>{{$message}}</li>
+									@endforeach
 								</ul>
 							</div>
-						<?php endif ?>
+						@endif
 
 					</div>	
 				</div>
 
-			  <div class="form-group <?= isset($errors) ? $formRegister->getErrorCssClass(@$errors['name']) : '' ?>">
+			  <div class="form-group {{!empty($errors) ? $formRegister->getErrorCssClass(@$errors['name']) : ''}}">
 			    <label for="name" class="col-sm-12 control-label label-title">Nombre</label>
 			    <div class="col-sm-12">
-			      <input type="text" class="form-control" id="name" placeholder="Ingresá tu nombre" value="<?= @$_POST['name'] ?>" name="name">
+			      <input type="text" class="form-control" id="name" placeholder="Ingresá tu nombre" value="{{@$_POST['name']}}" name="name">
 			    </div>
 			  </div>
-			  <div class="form-group <?= isset($errors) ? $formRegister->getErrorCssClass(@$errors['lastname']) : '' ?>">
+			  <div class="form-group {{!empty($errors) ? $formRegister->getErrorCssClass(@$errors['lastname']) : ''}}">
 			    <label for="lastname" class="col-sm-12 control-label label-title">Apellido</label>
 			    <div class="col-sm-12">
-			      <input type="text" class="form-control" id="lastname" placeholder="Ingresá tu apellido" value="<?= @$_POST['lastname'] ?>" name="lastname">
+			      <input type="text" class="form-control" id="lastname" placeholder="Ingresá tu apellido" value="{{@$_POST['lastname']}}" name="lastname">
 			    </div>
 			  </div>
 
@@ -63,36 +63,36 @@
 			  	<div class="col-sm-12">
 				  	<select class="form-control" id="teamName" name="teamName">
 				  		<option value="">-- Elegí tu club --</option>
-				  		<?php foreach ($formRegister->getTeamNames() as $teamName): ?>
-				  			<option <?= $teamName == @$_POST['teamName'] ? 'selected' : ''?> value="<?= $teamName ?>">
-				  				<?= $teamName ?></option>
-				  		<?php endforeach ?>
+				  		@foreach ($formRegister->getTeamNames() as $teamName)
+				  			<option {{$teamName == @$_POST['teamName'] ? 'selected' : ''}} value="{{$teamName}}">
+				  				{{$teamName}}</option>
+				  		@endforeach
 					
 					</select>
 				</div>
 			  </div>
 
-			  <div class="form-group <?= isset($errors) ? $formRegister->getErrorCssClass(@$errors['email']) : '' ?>">
+			  <div class="form-group {{!empty($errors) ? $formRegister->getErrorCssClass(@$errors['email']) : ''}}">
 			    <label for="email" class="col-sm-12 control-label label-title">E-mail</label>
 			    <div class="col-sm-12">
 			    	<div class="input-group">
         				<span class="input-group-addon">@</span>
-			    		<input type="email" class="form-control" id="email" name="email" value="<?= @$_POST['email'] ?>" placeholder="Ingresá tu e-mail">
+			    		<input type="email" class="form-control" id="email" name="email" value="{{@$_POST['email']}}" placeholder="Ingresá tu e-mail">
 			    	</div>
 			    </div>
 			  </div>
 
-			  <div class="form-group <?= isset($errors) ? $formRegister->getErrorCssClass(@$errors['password']) : '' ?>">
+			  <div class="form-group {{!empty($errors) ? $formRegister->getErrorCssClass(@$errors['password']) : ''}}">
 			    <label for="password" class="col-sm-12 control-label label-title">Nueva contraseña</label>
 			    <div class="col-sm-12">
-			      <input type="password" class="form-control" id="password" value= "<?= @$_POST['password'] ?>" name="password" placeholder="Ingresá una contraseña">
+			      <input type="password" class="form-control" id="password" value= "{{@$_POST['password']}}" name="password" placeholder="Ingresá una contraseña">
 			    </div>
 			  </div>
 
-			  <div class="form-group <?= isset($errors) ? $formRegister->getErrorCssClass(@$errors['repeatPassword']) : '' ?>">
+			  <div class="form-group {{!empty($errors) ? $formRegister->getErrorCssClass(@$errors['repeatPassword']) : ''}}">
 			    <label for="repeatPassword" class="col-sm-12 control-label label-title">Repetir contraseña</label>
 			    <div class="col-sm-12">
-			      <input type="password" class="form-control" id="repeatPassword" value="<?= @$_POST['repeatPassword'] ?>" name="repeatPassword" placeholder="Repetí tu contraseña">
+			      <input type="password" class="form-control" id="repeatPassword" value="{{@$_POST['repeatPassword']}}" name="repeatPassword" placeholder="Repetí tu contraseña">
 			    </div>
 			  </div>
 

@@ -7,8 +7,6 @@ use SessionHelper;
 use DB;
 use FormRegister;
 
-//require_once('classes/FormRegister.class.php');
-
 class RegisterController extends Controller
 {
     //
@@ -20,22 +18,21 @@ class RegisterController extends Controller
 
 		//esto es para que si está logeado no pueda acceder al form de register
 		if($session->isLoggedIn()) {
-			header("Location: success.php");
-			exit();
+			return redirect('/success');
 		}
 
 		$errors = [];
 
-		if (!empty($_POST)) {
+		if ($request->isMethod('post'))
 
 			//Acá vengo si me enviaron el form
 			$formRegister = new FormRegister(
-				$_POST['name'],
-				$_POST['lastname'],
-				$_POST['email'],
-				$_POST['password'],
-				$_POST['repeatPassword'],
-				$_POST['teamName']
+				$request->input('name'),
+				$request->input('lastname'),
+				$request->input('email'),
+				$request->input('password'),
+				$request->input('repeatPassword'),
+				$request->input('teamName')
 			);
 			
 			//Validar
@@ -49,8 +46,7 @@ class RegisterController extends Controller
 				$db->guardarUsuario($user);
 
 				// Reenviarlo a la felicidad
-				header('location: /happiness');
-				exit;
+				return redirect('/happiness');
 			}
 		} else {
 			$formRegister = new FormRegister();

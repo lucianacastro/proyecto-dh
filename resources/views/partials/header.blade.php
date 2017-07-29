@@ -37,15 +37,15 @@
 				
 					
 					<ul class="nav navbar-nav"> 
-						<?php if (!$session->isLoggedIn()): ?>
+						@if (!$session->isLoggedIn())
 							<li><a href="login">Iniciá sesión</a></li> 
 							<li><a href="register">Registrate</a></li> 
-						<?php endif ?>
+						@endif
 						<li><a href="faq">FAQ's</a></li>
 
-		        		<?php if ($session->isLoggedIn()): ?>
+		        		@if ($session->isLoggedIn())
 			        		<li class="dropdown">
-			          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $session->getUser()->getName() ?> <span class="caret"></span></a>
+			          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$session->getUser()->getName()}} <span class="caret"></span></a>
 			          			
 			          			<ul class="dropdown-menu">
 						            <li><a href="#">Mi perfil</a></li>
@@ -53,7 +53,7 @@
 						            <li><a class="logout" href="#">Cerrar sesión</a></li>
 						        </ul>
 						    </li>
-					    <?php endif ?>
+					    @endif
 
 					    <li class="dropdown theme-choice">
 			          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Themes<span class="caret"></span></a>

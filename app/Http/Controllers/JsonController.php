@@ -14,13 +14,12 @@ class JsonController extends Controller
     	$countUsers = count(DB::getInstance()->getUsers());
 		$result = ['total' => $countUsers];
 
-		header('Content-Type: application/json');
-		print json_encode($result);
-		exit;
+		return response($result)->header('Content-Type', 'application/json');
 	}
 
 	public function userAvailability(Request $request) {
 		// user-availability?email=test@example.com
+		$status = 200;
 		if (!empty($request->query('email'))) {
 			$user = DB::getInstance()->getUserByEmail($request->query('email'));
 			$result = [
@@ -30,11 +29,9 @@ class JsonController extends Controller
 			$result = [
 				'error' => 'Missing email query parameter',
 			];
-			http_response_code(400);
+			$status = 400;
 		}
 
-		header('Content-Type: application/json');
-		print json_encode($result);
-		exit;
+		return response($result, $status)->header('Content-Type', 'application/json');
 	}
 }
