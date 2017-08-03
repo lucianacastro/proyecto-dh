@@ -23,7 +23,7 @@ class RegisterController extends Controller
 
 		$errors = [];
 
-		if ($request->isMethod('post'))
+		if ($request->isMethod('post')) {
 
 			//Acá vengo si me enviaron el form
 			$formRegister = new FormRegister(

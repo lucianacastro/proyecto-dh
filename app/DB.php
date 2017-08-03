@@ -9,7 +9,7 @@ class DB {
 	private $usersFile = 'usuarios.json';
 	private $dsn = 'mysql:host=localhost;dbname=teamUp';
 	private $user = 'root';
-	private $password = 'root';
+	private $password = '';
 	private $pdo;
 
 
